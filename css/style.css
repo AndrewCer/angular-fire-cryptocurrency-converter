@@ -1,0 +1,15 @@
+.bit-action {
+  border: solid black 1px;
+  text-align: center;
+  margin-top: 10%;
+}
+
+h1 {
+  display: inline-block;
+}
+
+input {
+  margin: 5px;
+  width: 30px;
+  height: 50px;
+}
