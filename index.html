@@ -21,8 +21,16 @@
   <body>
     <div class="container bit-action">
       <div ng-controller='CurrencyController' class="row">
-        <h1><input type="text" ng-model='userInput'></h1>
-        <h1>BTC = {{bitcoinData.ask}} USD</h1>
+        <h1><input type="number" ng-model='userInput'></h1>
+        <select ng-model='currency' ng-change='currencyChanger(currency)'>
+          <option value="">Please Select a Currnecy</option>
+          <option value="bitcoin">BTC</option>
+          <option value="dogecoin">XDG</option>
+          <option value="litecoin">LTC</option>
+        </select>
+        <h1 ng-show='bitty'>{{chosenCurrency}} = {{bitcoinData.bitcoin.ask * userInput || 0}} USD</h1>
+        <h1 ng-show='dogey'>{{chosenCurrency}} = {{bitcoinData.dogecoin.ask * userInput || 0}} USD</h1>
+        <h1 ng-show='litey'>{{chosenCurrency}} = {{bitcoinData.litecoin.ask * userInput || 0}} USD</h1>
       </div>
     </div>
   </body>
